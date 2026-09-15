@@ -44,7 +44,7 @@ public class S05_MyMeshRenderer : MonoBehaviour
             // TODO: x를 width로 나눈 몫이 짝수면 colorA, 홀수면 colorB가 되도록
             // isColorA를 올바른 조건식으로 바꾸세요.
             // 힌트: (x / width) % 2 == 0
-            bool isColorA = true; // ← 이 줄을 수정하세요
+            bool isColorA = (x / width) % 2 == 0; // ← 이 줄을 수정하세요
 
             Color stripeColor = isColorA ? colorA : colorB;
             for (int y = 0; y < canvasHeight; y++)
