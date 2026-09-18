@@ -23,6 +23,7 @@
           int[] triangles = new int[]
           {
               // 예: 0, 1, 2,
+              2, 1, 0
           };
 
           Mesh mesh = new Mesh();
