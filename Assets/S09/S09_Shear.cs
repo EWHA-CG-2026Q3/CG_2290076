@@ -11,6 +11,9 @@ public class S09_Shear : MonoBehaviour
     void OnEnable()
     {
         diamondMesh = GetComponent<DiamondMesh>();
+
+        Vector3 top = FromHomogeneous(MultiplyMatrixVectorRaw(ShearMatrixRaw(k), ToHomogeneous(new Vector3(0.5f, 1f, 0.5f))));
+        Debug.Log($"[{name}] k = {k} -> 꼭대기 {top}");
     }
 
     void Update()
