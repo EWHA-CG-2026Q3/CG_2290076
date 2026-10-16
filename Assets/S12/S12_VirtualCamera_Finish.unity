@@ -151,7 +151,7 @@ MonoBehaviour:
   targets:
   - {fileID: 1880748457}
   - {fileID: 2126361779}
-  fieldOfView: 90
+  fieldOfView: 60
   near: 0.3
   far: 20
   canvasImage: {fileID: 1183659707}
@@ -234,7 +234,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 90
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
