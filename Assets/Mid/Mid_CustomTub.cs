@@ -5,9 +5,9 @@ using System.Collections.Generic;
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class Mid_CustomTub : MonoBehaviour
 {
-    [SerializeField] float width = 1.2f;   // x
-    [SerializeField] float depth = 1.0f; // z
-    [SerializeField] float height = 0.5f;  // y
+    [SerializeField] float width = 1.8f;   // x
+    [SerializeField] float depth = 1.4f; // z
+    [SerializeField] float height = 0.6f;  // y
 
     List<Vector3> verts = new List<Vector3>();
     List<int> tris = new List<int>();
