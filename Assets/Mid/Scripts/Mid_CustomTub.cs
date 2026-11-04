@@ -11,11 +11,13 @@ public class Mid_CustomTub : MonoBehaviour
 
     List<Vector3> verts = new List<Vector3>();
     List<int> tris = new List<int>();
+    List<Vector2> uvs = new List<Vector2>();
     
     void Start()
     {  
         verts.Clear();
         tris.Clear();
+        uvs.Clear();
 
         float w = width / 2f;
         float d = depth / 2f;
@@ -42,6 +44,7 @@ public class Mid_CustomTub : MonoBehaviour
         Mesh mesh = new Mesh();
         mesh.vertices = verts.ToArray();
         mesh.triangles = tris.ToArray();
+        mesh.uv = uvs.ToArray();
         mesh.RecalculateNormals();
 
         GetComponent<MeshFilter>().mesh = mesh;
@@ -51,13 +54,22 @@ public class Mid_CustomTub : MonoBehaviour
 
     void AddQuad(Vector3 v0, Vector3 v1, Vector3 v2, Vector3 v3)
     {
+        float w = Vector3.Distance(v0, v3);
+        float h = Vector3.Distance(v0, v1);
+        Vector2 u0 = new Vector2(0, 0);
+        Vector2 u1 = new Vector2(0, h);
+        Vector2 u2 = new Vector2(w, h);
+        Vector2 u3 = new Vector2(w, 0);
+
         int i = verts.Count;
         verts.Add(v0); verts.Add(v1); verts.Add(v2); verts.Add(v3);
+        uvs.Add(u0); uvs.Add(u1); uvs.Add(u2); uvs.Add(u3);
         tris.Add(i); tris.Add(i + 1); tris.Add(i + 2);
         tris.Add(i); tris.Add(i + 2); tris.Add(i + 3);
     
         i = verts.Count;
         verts.Add(v0); verts.Add(v1); verts.Add(v2); verts.Add(v3);
+        uvs.Add(u0); uvs.Add(u1); uvs.Add(u2); uvs.Add(u3);
         tris.Add(i); tris.Add(i + 2); tris.Add(i + 1);
         tris.Add(i); tris.Add(i + 3); tris.Add(i + 2);
     }
